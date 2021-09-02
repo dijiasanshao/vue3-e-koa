@@ -14,6 +14,22 @@ export default {
   components:{
     Welcome
   },
+  mounted(){  
+    // this.$request({
+    //   method:'get',
+    //   url:'/login',
+    //   data:{
+    //     name:'jack'
+    //   }
+    // }).then((res)=>{
+    //   console.log(res)
+    // })
+
+
+  this.$request.get('/login',{name:'suyichen'},{mock:true,loading:true}).then((res)=>{
+      console.log(res)
+  })
+  },
   methods: {
     goHome() {
       this.$router.push("/welcome");
